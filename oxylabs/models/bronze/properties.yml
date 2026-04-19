@@ -1,0 +1,48 @@
+version: 2 
+
+models:
+  - name: bronze_accounts
+    columns:
+      - name: account_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: bronze_churn_events
+    columns:
+      - name: churn_event_id
+        data_tests:
+          - unique
+          - not_null 
+      - name: account_id
+        data_tests:
+          - not_null
+
+  - name: bronze_feature_usage
+    columns:
+      - name: usage_id
+        data_tests:
+          - not_null
+      - name: subscription_id
+        data_tests:
+          - not_null
+
+  - name: bronze_subscriptions
+    columns:
+      - name: subscription_id
+        data_tests:
+          - unique
+          - not_null 
+      - name: account_id
+        data_tests:
+          - not_null
+
+  - name: bronze_support_tickets
+    columns:
+      - name: ticket_id
+        data_tests:
+          - unique
+          - not_null
+      - name: account_id
+        data_tests:
+          - not_null

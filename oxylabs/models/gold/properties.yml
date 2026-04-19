@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: gold_mrr_waterfall
+    description: Monthly revenue waterfall showing how MRR changes between months.
+    columns:
+      - name: month
+        description: Reporting month.
+        data_tests:
+          - not_null
+          - unique
+      - name: opening_mrr
+        description: Total MRR carried into the month.
+      - name: new_mrr
+        description: MRR from first-time paying accounts.
+      - name: reactivation_mrr
+        description: MRR from accounts that returned after previously churning.
+      - name: expansion_mrr
+        description: Increase in MRR from existing paying accounts.
+      - name: contraction_mrr
+        description: Decrease in MRR from existing paying accounts that did not fully churn.
+      - name: churn_mrr
+        description: MRR lost from accounts that dropped to zero.
+      - name: closing_mrr
+        description: Total MRR at the end of the month.

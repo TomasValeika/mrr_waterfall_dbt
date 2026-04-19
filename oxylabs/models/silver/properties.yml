@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: silver_accounts
+    description: Cleaned account dimension based on raw accounts data.
+    columns:
+      - name: account_id
+        description: Unique identifier of the customer account.
+        data_tests:
+          - not_null
+          - unique
+
+  - name: silver_subscriptions
+    description: Cleaned subscription fact table with typed subscription attributes.
+    columns:
+      - name: subscription_id
+        description: Unique identifier of the subscription.
+        data_tests:
+          - not_null
+          - unique
+      - name: account_id
+        description: Foreign key to silver_accounts.
+        data_tests:
+          - not_null
+
+  - name: silver_account_month_mrr
+    description: Monthly account-level MRR spine used as the base for revenue movement analysis.
+    columns:
+      - name: account_id
+        description: Customer account identifier.
+        data_tests:
+          - not_null
+      - name: month_start
+        description: First day of the reporting month.
+        data_tests:
+          - not_null
+      - name: mrr
+        description: Monthly recurring revenue for the account in that month.
+        data_tests:
+          - not_null

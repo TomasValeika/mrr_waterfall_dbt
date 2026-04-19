@@ -1,0 +1,16 @@
+[project]
+name = "oxy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "adbc-driver-postgresql>=1.11.0",
+    "dbt-core>=1.11.8",
+    "dbt-postgres>=1.10.0",
+    "loguru>=0.7.3",
+    "polars>=1.39.3",
+    "psycopg[binary]>=3.3.3",
+    "pyarrow>=23.0.1",
+    "shandy-sqlfmt[jinjafmt]>=0.29.0",
+]

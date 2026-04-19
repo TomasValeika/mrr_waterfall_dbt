@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    database: mydb  
+    schema: raw  
+    tables:
+      - name: accounts
+      - name: churn_events
+      - name: feature_usage
+      - name: subscriptions
+      - name: support_tickets
+
+
